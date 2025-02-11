@@ -3,17 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w & nodemon dist/app.js",
+    "serve": "nodemon dist/app.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.5",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.13.1"
+    "@types/node": "^22.13.1",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.9"
   }
 }
