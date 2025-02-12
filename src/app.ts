@@ -6,32 +6,24 @@ import todosRoutes from './routes/todo.route'
 import bodyParser from 'body-parser';
 
 import db from './config/db';
-import './models'
-
-
-
+import './entities'
 
 
 const app = express();
 
 app.use(bodyParser.json());
 
-
-
-app.use(todosRoutes)
-
-
-
+app.use("/todos",todosRoutes)
 
 
 
 db.sync({force: false})
-.then(() => {
+  .then(() => {
     console.log('Models synced with the database.');
-})
-.catch((error) => {
+  })
+  .catch((error) => {
     console.error('Error syncing models:', error);
-});
+  });
 
-app.listen(3000)
+app.listen(8000)
 
