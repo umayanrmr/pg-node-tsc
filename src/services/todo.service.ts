@@ -1,5 +1,5 @@
 import { FindOptions, Op, where, WhereOptions } from "sequelize";
-import TodoEntity from "../entities/todo.entity";
+import TodoModel from "../models/todo.model";
 
 export class TodoService {
 
@@ -11,7 +11,7 @@ export class TodoService {
             }
         }
         if (exceptId) whereOptions.id = { [Op.ne]: exceptId }
-        return await TodoEntity.findAll({
+        return await TodoModel.findAll({
             where: whereOptions
         });
     }

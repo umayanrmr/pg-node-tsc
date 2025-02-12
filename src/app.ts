@@ -4,7 +4,7 @@ import todosRoutes from './routes/todo.route'
 import bodyParser from 'body-parser';
 
 import db from './config/db';
-import './entities'
+import './models'
 
 
 const app = express();
