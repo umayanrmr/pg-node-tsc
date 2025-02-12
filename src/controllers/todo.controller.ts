@@ -33,6 +33,24 @@ export class TodoController {
         AppResponse.updated(res, obj);
     }
 
+
+    public static async delete(req: Request, res: Response) {
+        const { id } = req.params;
+        const obj = await TodoModel.findByPk(id);
+        if(!obj) throw new NotFoundError();
+        await obj.destroy();
+        AppResponse.deleted(res, obj);
+    }
+
+
+    public static async search(req: Request, res: Response) {
+        const { title } = req.query;
+        const page = req.query.page || 1;
+        const size = req.query.size || 20;
+        const items = await TodoService.search(title, +page, +size);
+        AppResponse.data(res, items);
+    }
 }
+
 
 

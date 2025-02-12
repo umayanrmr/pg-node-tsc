@@ -10,9 +10,11 @@ const validations = [
 ]
 
 router.put('/:id', validations, routeHandler(TodoController.update));
-
-
+router.delete('/:id', routeHandler(TodoController.delete));
+router.get('/', routeHandler(TodoController.search));
 router.post('/', validations, routeHandler(TodoController.create));
+
+
 
 export default router;
 // HOW TO USE: import anyName from './routes/todo.route'

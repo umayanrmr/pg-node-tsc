@@ -12,6 +12,9 @@ export function validateModel (req: any){
     }
 }
 
+export function calculateOffset (page: number, size: number) {
+    return (page - 1) * size;
+}
 
 type AsyncMiddleware = (req: Request, res: Response, next: NextFunction) => Promise<void>;
 
