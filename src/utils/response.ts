@@ -15,13 +15,11 @@ export class AppResponse {
         return this.default(res, 201, message, data)
     }
     public static updated(res: Response, data: any | null, message = "Resource updated succesfully.") {
-        return this.default(res, 204, message, data)
+        return this.default(res, 200, message, data)
     }
     public static deleted(res: Response, data: any | null, message = "Resource deleted succesfully.") {
-        return this.default(res, 204, message, data)
+        return this.default(res, 200, message, data)
     }
-
-
 
     public static default(res: Response, code: number = 200, message:  string | null, data: any | null) {
         const body: any = { };

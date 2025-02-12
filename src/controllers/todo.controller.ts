@@ -28,7 +28,9 @@ export class TodoController {
 
         const obj = await TodoModel.findByPk(id);
         if(!obj) throw new NotFoundError();
-        obj.title = title
+        obj.title = title;
+        await obj.save();
+        AppResponse.updated(res, obj);
     }
 
 }
