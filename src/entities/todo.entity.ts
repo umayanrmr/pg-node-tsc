@@ -1,7 +1,6 @@
 
-import { DataTypes, FindOptions, Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import db from "../config/db";
-import { Op } from "sequelize";
 
 
 

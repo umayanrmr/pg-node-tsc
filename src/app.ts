@@ -1,6 +1,4 @@
 
-// const express = require('express');
-;
 import express from 'express'
 import todosRoutes from './routes/todo.route'
 import bodyParser from 'body-parser';

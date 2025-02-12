@@ -1,5 +1,4 @@
 import { Response } from "express";
-import { AppError } from "./error";
 
 export class AppResponse {
 
